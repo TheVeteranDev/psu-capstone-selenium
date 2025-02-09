@@ -7,14 +7,14 @@ import { createAccount, createAccountWithBadInputs } from "./tests/createAccount
 const main = async () => {
     const driver = await new Builder().forBrowser(Browser.CHROME).build();
 
-    driver.get("http://localhost:5000")
+    await driver.get(process.env.TEST_ENV_URL)
     await wait(driver)
 
     try {
-        // await createAccount(driver)
-        // await signOut(driver)
-        // await signIn(driver)
-        // await signOut(driver)
+        await createAccount(driver)
+        await signOut(driver)
+        await signIn(driver)
+        await signOut(driver)
         await createAccountWithBadInputs(driver)
     } catch (error) {
         console.error("Error:", error);
