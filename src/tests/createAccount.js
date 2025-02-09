@@ -120,4 +120,8 @@ export const createAccountWithBadInputs = async (driver) => {
 
     await driver.findElement(By.xpath("//*[text()='Invalid input: User already exists ']"))
     await wait(driver)
+
+    await driver.get(process.env.TEST_ENV_URL)
+    await wait(driver)
+    await sleep(driver)
 }
