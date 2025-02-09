@@ -1,0 +1,24 @@
+{
+  "name": "psu-capstone-selenium",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/TheVeteranDev/psu-capstone-selenium#readme",
+  "bugs": {
+    "url": "https://github.com/TheVeteranDev/psu-capstone-selenium/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheVeteranDev/psu-capstone-selenium.git"
+  },
+  "license": "ISC",
+  "author": "John Rukstalis III",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node ./src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.28.1"
+  }
+}
