@@ -3,8 +3,9 @@ import { signIn } from "./tests/signIn.js"
 import { signOut } from "./tests/signOut.js"
 import { wait } from "./utilities/utilities.js"
 import { createAccount } from "./tests/createAccount.js";
-import { changeEmail } from "./tests/changeEmail.js";
-import { changePassword } from "./tests/changePassword.js";
+import { changeEmail, changeEmailBadInputs } from "./tests/changeEmail.js";
+import { changePassword, changePasswordBadInputs } from "./tests/changePassword.js";
+import { deleteAccount } from "./tests/deleteAccount.js";
 
 const main = async () => {
     const driver = await new Builder().forBrowser(Browser.CHROME).build();
@@ -13,12 +14,16 @@ const main = async () => {
     await wait(driver)
 
     try {
-        await createAccount(driver)
-        await signOut(driver)
+        // await createAccount(driver)
+        // await signOut(driver)
+        // await signIn(driver, process.env.COGNITO_USERNAME, process.env.COGNITO_PASSWORD)
+        // await changeEmailBadInputs(driver)
+        // await changeEmail(driver)
+        // await changePassword(driver)
+        // await changePasswordBadInputs(driver)
+        // await signOut(driver)
         await signIn(driver, process.env.COGNITO_USERNAME, process.env.COGNITO_PASSWORD)
-        await changeEmail(driver)
-        await changePassword(driver)
-        await signOut(driver)
+        await deleteAccount(driver)
     } catch (error) {
         console.error("Error:", error);
     } finally {

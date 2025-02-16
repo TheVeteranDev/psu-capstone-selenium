@@ -4,12 +4,8 @@ import { getCode } from "./getCode.js"
 import assert from "assert"
 
 export const createAccount = async (driver) => {
-    const signInButton = await driver.findElement(By.id("sign-in"))
-    await signInButton.click()
-    await wait(driver)
-
-    const createAccountLink = await driver.findElement(By.xpath("//*[text()='Create a New Account']"))
-    await createAccountLink.click()
+    const navbarSignUpButton = await driver.findElement(By.id("navbar-sign-up-button"))
+    await navbarSignUpButton.click()
     await wait(driver)
 
     const usernameInput = await driver.findElement(By.id("username-input"))

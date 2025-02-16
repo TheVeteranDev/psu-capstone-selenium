@@ -2,7 +2,7 @@ import { sleep, wait } from "../utilities/utilities.js"
 import { By } from "selenium-webdriver"
 
 export const signIn = async (driver, username, password) => {
-    const homePageSignInButton = await driver.findElement(By.id("sign-in"))
+    const homePageSignInButton = await driver.findElement(By.id("navbar-sign-in-button"))
     await homePageSignInButton.click()
     await wait(driver)
 
